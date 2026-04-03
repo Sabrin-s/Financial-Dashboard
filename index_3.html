@@ -35,11 +35,11 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-/* SCROLLBAR */
+
 ::-webkit-scrollbar { width: 5px; background: var(--bg2); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
-/* LAYOUT */
+
 .app { display: flex; min-height: 100vh; }
 .sidebar {
   width: 240px; min-width: 240px;
@@ -153,11 +153,11 @@ body {
 }
 .content { padding: 28px 32px; flex: 1; }
 
-/* PAGE SECTIONS */
+
 .page { display: none; }
 .page.active { display: block; }
 
-/* CARDS */
+
 .section-title {
   font-family: 'Syne', sans-serif; font-weight: 600;
   font-size: 0.95rem; color: var(--text);
@@ -209,7 +209,7 @@ body {
 .card-change.up { color: var(--green); }
 .card-change.down { color: var(--red); }
 
-/* CHARTS */
+
 .charts-row { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; margin-bottom: 28px; }
 .chart-card {
   background: var(--bg2); border: 1px solid var(--border);
@@ -218,7 +218,7 @@ body {
 }
 .chart-card canvas { max-height: 230px; }
 
-/* TRANSACTIONS */
+
 .tx-controls {
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   margin-bottom: 16px;
@@ -315,7 +315,6 @@ body {
 .pg-btn.active { background: var(--accent); border-color: var(--accent); color: #0a0c10; font-weight: 700; }
 .pg-info { font-size: 0.78rem; color: var(--text3); margin-right: auto; }
 
-/* INSIGHTS */
 .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
 .insight-card {
   background: var(--bg2); border: 1px solid var(--border);
@@ -337,7 +336,6 @@ body {
 .cat-bar { height: 100%; border-radius: 99px; transition: width 1.2s cubic-bezier(.22,.68,0,1.2); }
 .cat-pct { font-size: 0.75rem; color: var(--text3); width: 38px; text-align: right; }
 
-/* MODAL */
 .modal-overlay {
   position: fixed; inset: 0; z-index: 200;
   background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
@@ -365,7 +363,6 @@ body {
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .modal-actions { display: flex; gap: 10px; margin-top: 22px; justify-content: flex-end; }
 
-/* TOAST */
 .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
 .toast {
   background: var(--bg2); border: 1px solid var(--border);
@@ -381,7 +378,6 @@ body {
 .toast.error { border-left: 3px solid var(--red); }
 .toast.info { border-left: 3px solid var(--accent2); }
 
-/* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
@@ -395,16 +391,16 @@ body {
 .summary-card:nth-child(3) { animation-delay: 0.15s; }
 .summary-card:nth-child(4) { animation-delay: 0.2s; }
 
-/* EXPORT */
+
 .export-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
 
-/* EMPTY STATE */
+
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text3); }
 .empty-state svg { opacity: 0.2; margin-bottom: 16px; }
 .empty-state h3 { font-family: 'Syne', sans-serif; font-size: 1rem; color: var(--text2); margin-bottom: 6px; }
 .empty-state p { font-size: 0.85rem; }
 
-/* RESPONSIVE */
+
 @media (max-width: 1100px) {
   .summary-grid { grid-template-columns: repeat(2, 1fr); }
   .charts-row { grid-template-columns: 1fr; }
@@ -425,7 +421,6 @@ body {
   .summary-grid { grid-template-columns: 1fr; }
 }
 
-/* LIGHT MODE */
 body.light {
   --bg: #f4f5f8;
   --bg2: #ffffff;
@@ -437,7 +432,7 @@ body.light {
   --card-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
 }
 
-/* MISC */
+
 .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
 .tx-table-wrap .no-admin { display: none; }
 .separator { height: 1px; background: var(--border); margin: 20px 0; }
@@ -453,7 +448,7 @@ body.light {
 </style>
 </head>
 <body>
-<!-- SIDEBAR OVERLAY -->
+
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:99;"></div>
 
 <!-- SIDEBAR -->
@@ -495,7 +490,6 @@ body.light {
   </div>
 </aside>
 
-<!-- MAIN -->
 <div class="main">
   <header class="topbar">
     <div style="display:flex;align-items:center;gap:12px;">
@@ -514,7 +508,6 @@ body.light {
 
   <div class="content">
 
-    <!-- DASHBOARD PAGE -->
     <div class="page active" id="page-dashboard">
       <div class="summary-grid" id="summaryGrid"></div>
       <div class="charts-row">
@@ -533,7 +526,7 @@ body.light {
       </div>
     </div>
 
-    <!-- TRANSACTIONS PAGE -->
+  
     <div class="page" id="page-transactions">
       <div class="tx-controls">
         <div class="search-wrap">
@@ -579,7 +572,7 @@ body.light {
       </div>
     </div>
 
-    <!-- INSIGHTS PAGE -->
+  
     <div class="page" id="page-insights">
       <div class="insights-grid" id="insightsGrid"></div>
       <div class="charts-row">
@@ -597,7 +590,6 @@ body.light {
   </div>
 </div>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <div class="modal-title" id="modalTitle">Add Transaction</div>
@@ -647,13 +639,11 @@ body.light {
   </div>
 </div>
 
-<!-- TOAST -->
+
 <div class="toast-container" id="toastContainer"></div>
 
 <script>
-// ============================
-// DATA
-// ============================
+
 const CAT_COLORS = {
   'Food & Dining': '#ff6b6b',
   'Transport': '#fbbf24',
@@ -721,9 +711,7 @@ const SEED_TX = [
   {id:50,date:'2025-02-22',description:'Meesho Order',category:'Shopping',type:'expense',amount:2200},
 ];
 
-// ============================
-// STATE
-// ============================
+
 let state = {
   transactions: [],
   role: 'admin',
@@ -752,9 +740,7 @@ function saveState() {
   try { localStorage.setItem('finsight_v2', JSON.stringify({transactions: state.transactions, role: state.role, darkMode: state.darkMode, nextId: state.nextId})); } catch(e) {}
 }
 
-// ============================
-// UTILS
-// ============================
+
 function fmt(n) { return '₹' + Number(n).toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2}); }
 function fmtK(n) { return n >= 100000 ? '₹' + (n/100000).toFixed(2) + 'L' : n >= 1000 ? '₹' + (n/1000).toFixed(1) + 'K' : '₹' + n; }
 function fmtDate(d) { const dt = new Date(d); return dt.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
@@ -769,9 +755,7 @@ function toast(msg, type='success') {
   setTimeout(() => { el.style.opacity='0'; el.style.transform='translateX(20px)'; el.style.transition='all 0.3s'; setTimeout(()=>el.remove(),300); }, 2500);
 }
 
-// ============================
-// COMPUTED
-// ============================
+
 function getTotals(txList) {
   let income = 0, expense = 0;
   txList.forEach(t => { if(t.type==='income') income+=t.amount; else expense+=t.amount; });
@@ -792,9 +776,7 @@ function getCatTotals(txList) {
   return Object.entries(cats).sort((a,b)=>b[1]-a[1]);
 }
 
-// ============================
-// DASHBOARD
-// ============================
+
 let chartInstances = {};
 function renderDashboard() {
   const tx = state.transactions;
@@ -851,9 +833,7 @@ function renderDashboard() {
 
 function destroyChart(id) { if(chartInstances[id]) { chartInstances[id].destroy(); delete chartInstances[id]; } }
 
-// ============================
-// TRANSACTIONS
-// ============================
+
 function getFilteredTx() {
   let tx = [...state.transactions];
   const q = state.txSearch.toLowerCase();
@@ -909,7 +889,7 @@ function renderTxTable() {
     `).join('');
   }
 
-  // Pagination
+ 
   const totalPages = Math.max(1, Math.ceil(filtered.length / state.txPerPage));
   const pg = document.getElementById('pagination');
   let html = `<span class="pg-info">${filtered.length} record${filtered.length!==1?'s':''}</span>`;
@@ -933,7 +913,6 @@ function populateFilters() {
   const mSel = document.getElementById('txMonth');
   mSel.innerHTML = '<option value="">All Months</option>' + months.map(m=>`<option value="${m}">${new Date(m+'-01').toLocaleDateString('en-IN',{month:'short',year:'numeric'})}</option>`).join('');
 
-  // Cat chips
   const chipEl = document.getElementById('catChips');
   chipEl.innerHTML = ['All',...cats].map(c => `<span class="chip${(!state.txCatChip&&c==='All')||(state.txCatChip===c)?'  active':''}" onclick="setCatChip('${c==='All'?'':c}')">${c}</span>`).join('');
 }
@@ -942,9 +921,7 @@ function setCatChip(cat) { state.txCatChip = cat; state.txPage = 1; populateFilt
 
 function updateTxBadge() { document.getElementById('txBadge').textContent = state.transactions.length; }
 
-// ============================
-// MODAL
-// ============================
+
 function openModal(id = null) {
   state.editingId = id;
   document.getElementById('modalTitle').textContent = id ? 'Edit Transaction' : 'Add Transaction';
@@ -1004,9 +981,7 @@ function deleteTransaction(id) {
   toast('Transaction deleted', 'info');
 }
 
-// ============================
-// INSIGHTS
-// ============================
+
 function renderInsights() {
   const tx = state.transactions;
   const {income, expense} = getTotals(tx);
@@ -1014,11 +989,10 @@ function renderInsights() {
   const topCat = catTotals[0];
   const monthly = getMonthlyData();
 
-  // Best saving month
   let bestMonth = monthly[0], bestSaving = -Infinity;
   monthly.forEach(m => { const s = m.income - m.expense; if(s > bestSaving){bestSaving=s; bestMonth=m;} });
 
-  // Avg monthly expense
+
   const avgExp = monthly.reduce((s,m)=>s+m.expense,0)/monthly.length;
   const latestMonth = monthly[monthly.length-1];
 
@@ -1057,7 +1031,7 @@ function renderInsights() {
     </div>
   `;
 
-  // Insight bar chart
+ 
   destroyChart('insightBarChart');
   const monthly2 = getMonthlyData();
   const ibCtx = document.getElementById('insightBarChart').getContext('2d');
@@ -1070,7 +1044,7 @@ function renderInsights() {
     options: { plugins:{legend:{labels:{color:'#8b90a0',font:{family:'DM Sans',size:11},boxWidth:10}}}, scales:{x:{grid:{display:false},ticks:{color:'#555a6b',font:{family:'DM Mono',size:11}}},y:{grid:{color:'#1e2230'},ticks:{color:'#555a6b',font:{family:'DM Mono',size:11},callback:v=>fmtK(v)}}}, responsive:true, maintainAspectRatio:true }
   });
 
-  // Cat breakdown
+ 
   const totalExp = catTotals.reduce((s,c)=>s+c[1],0);
   document.getElementById('catBreakdown').innerHTML = catTotals.map(([cat,val]) => `
     <div class="cat-row">
@@ -1082,9 +1056,6 @@ function renderInsights() {
   `).join('');
 }
 
-// ============================
-// ROLE
-// ============================
 function setRole(role) {
   state.role = role;
   document.getElementById('roleBadge').className = `role-badge ${role}`;
@@ -1098,9 +1069,6 @@ function setRole(role) {
   toast(`Switched to ${role === 'admin' ? 'Administrator' : 'Viewer'} role`, 'info');
 }
 
-// ============================
-// NAVIGATION
-// ============================
 const PAGE_TITLES = { dashboard: 'Overview', transactions: 'Transactions', insights: 'Insights' };
 function navigate(page) {
   state.currentPage = page;
@@ -1116,9 +1084,7 @@ function navigate(page) {
   document.getElementById('sidebarOverlay').style.display = 'none';
 }
 
-// ============================
-// EXPORT
-// ============================
+
 function exportCSV() {
   const filtered = getFilteredTx();
   const header = 'Date,Description,Category,Type,Amount\n';
@@ -1131,9 +1097,7 @@ function exportCSV() {
   toast('CSV exported');
 }
 
-// ============================
-// THEME
-// ============================
+
 function toggleTheme() {
   state.darkMode = !state.darkMode;
   document.body.classList.toggle('light', !state.darkMode);
@@ -1146,9 +1110,7 @@ function toggleTheme() {
   if (state.currentPage === 'insights') setTimeout(renderInsights, 50);
 }
 
-// ============================
-// MOBILE SIDEBAR
-// ============================
+
 function toggleSidebar() {
   const sb = document.getElementById('sidebar');
   const ov = document.getElementById('sidebarOverlay');
@@ -1156,9 +1118,6 @@ function toggleSidebar() {
   ov.style.display = open ? 'block' : 'none';
 }
 
-// ============================
-// INIT
-// ============================
 loadState();
 document.getElementById('roleSelect').value = state.role;
 document.body.classList.toggle('light', !state.darkMode);
